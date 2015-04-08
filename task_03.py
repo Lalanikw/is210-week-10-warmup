@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Dictionaries add and remove values."""
+"""Dictionaries copy, add and remove values."""
 
 import data
 
 
-CORRECTED = data.BANDS['Bob Dylan'] = ['vocals', 'guitar', 'harmonica']
-del data.BANDS['Van Halen']['David Lee Roth']
-CORRECTED = data.BANDS['van Halen'] = {'sammy Hager': 'vocals'}
+CORRECTED = data.BANDS.copy()
+CORRECTED['Bob Dylan'] = ['vocals', 'guitar', 'harmonic']
+del CORRECTED['Van Halen']['David Lee Roth']
+CORRECTED['Van Halen'] = {'Sammy Hager': 'vocals'}
+print CORRECTED['Van Halen'].keys()
